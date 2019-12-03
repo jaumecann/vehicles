@@ -2,8 +2,64 @@
 <script src="../models/car.js"></script>
 <script src="../models/wheel.js"></script>
 <script src="../controllers/controller.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Passion+One&display=swap" rel="stylesheet">
 </head>
-<body>
-    <p id="carInfo"></p>
-    <button onclick="createCar('1212SDS','SEAT','ROJO')">Create car</button>
+<body style="font-family: 'Passion One', cursive; background-color:lightsteelblue;">
+    <h1 id="carInfo" style="text-align: center;">Vehicles-Fase 1</h1>
+   
+    <div style="display:flex; justify-content: center;"> 
+        <div> Plate<br> <input type="text" name="plate"><br></div>
+        <div style="margin: 0 10px;"> Brand<br> <input type="text" name="brand"><br></div>
+        <div> Color<br> <input type="text" name="color"><br></div>
+
+    </div>
+   
+     
+    
+    
+    
+    <div style="text-align:center; margin-top: 50px;">
+        <button style="font-family: 'Passion One', cursive; font-size:1.2em;"  onclick="createCar()">Create car</button>
+    </div>
+
+    <div>
+        <p style="text-align: center; margin-bottom:150px;"></p>
+    </div>
+
+
+    <div style="background-color: mediumaquamarine; padding:50px;">
+       <div style="display:flex; justify-content: space-around;">
+ 
+                    <div>
+                    Marca Rueda 1<br> <input type="text" name="rueda1"><br>
+                    Diámetro Rueda 1<br> <input type="text" name="diam1"><br>
+                    </div>
+                    <div>
+                    Marca Rueda 2<br> <input type="text" name="rueda2"><br>
+                    Diámetro Rueda 2<br> <input type="text" name="diam2"><br>
+                    </div>
+                    <div>
+                    Marca Rueda 3<br> <input type="text" name="rueda3"><br>
+                    Diámetro Rueda 3<br> <input type="text" name="diam3"><br>
+                    </div>
+                    <div>
+                    Marca Rueda 4<br> <input type="text" name="rueda4"><br>
+                    Diámetro Rueda 4<br> <input type="text" name="diam4"><br>
+                    </div>
+
+       </div> 
+        
+        
+        
+        
+    
+       <div style="text-align:center; margin-top: 50px;">
+            <button id="wheel_text" style="font-family: 'Passion One', cursive; font-size:1.2em;"  onclick="">Add Wheels</button>
+        </div>
+
+
+    </div>
+
+      <p></p>
+    
 </body>

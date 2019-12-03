@@ -1,4 +1,5 @@
 class Car{
+    
     plate:string;
     color:string;
     brand:string;
@@ -8,9 +9,17 @@ class Car{
         this.plate=plate;
         this.color=color;
         this.brand=brand;
+      
     }
     
     addWheel(wheel:Wheel):void{
         this.wheels.push(wheel);
     }
+
+    get four_wheels () {
+        return this.wheels;
+    }
 }
+
+
+ 

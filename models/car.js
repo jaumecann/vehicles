@@ -9,5 +9,12 @@ var Car = /** @class */ (function () {
     Car.prototype.addWheel = function (wheel) {
         this.wheels.push(wheel);
     };
+    Object.defineProperty(Car.prototype, "four_wheels", {
+        get: function () {
+            return this.wheels;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return Car;
 }());

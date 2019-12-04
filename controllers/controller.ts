@@ -7,6 +7,22 @@ function createCar(){
     let b = document.getElementsByName('color')[0].value;
     let c = document.getElementsByName('brand')[0].value; 
     
+    let car=new Car(a, b, c);
+
+    document.getElementsByTagName('p')[0].innerHTML="CAR:<br> PLATE: " + car.plate
+    + "<br> COLOR: " +car.color + "<br> BRAND: " + car.brand; 
+   
+}
+
+function createWheel(){
+
+    var texto = document.getElementsByTagName('p')[1];
+
+    while (texto.firstChild) {
+        texto.removeChild(texto.firstChild);
+      }
+
+
     let w1 = document.getElementsByName('rueda1')[0].value; 
     let w2 = document.getElementsByName('rueda2')[0].value; 
     let w3 = document.getElementsByName('rueda3')[0].value; 
@@ -16,11 +32,8 @@ function createCar(){
     let d2 = document.getElementsByName('diam2')[0].value; 
     let d3 = document.getElementsByName('diam3')[0].value; 
     let d4 = document.getElementsByName('diam4')[0].value;
-    
-    let car=new Car(a, b, c);
 
-    document.getElementsByTagName('p')[0].innerHTML="CAR:<br> PLATE: " + car.plate
-    + "<br> COLOR: " +car.color + "<br> BRAND: " + car.brand; 
+    let car=new Car();
 
     car.addWheel(new Wheel(d1,w1));
     car.addWheel(new Wheel(d2,w2));
@@ -28,27 +41,19 @@ function createCar(){
     car.addWheel(new Wheel(d4,w4));
 
     
-    var brandTest = car.four_wheels[0].brand;
-    document.getElementById('wheel_text').onclick = function () {
-    document.getElementsByTagName('p')[1].innerHTML = brandTest;
-    };
+    var allWheels = car.four_wheels;
     
 
-    //var all = car.four_wheels;
+    for (let i=0; i<allWheels.length; i++){
+        texto.innerHTML += `Rueda ${i+1}: diametro (${allWheels[i].diameter}), marca (${allWheels[i].brand})<br>`
+    }
 
 
 
 
-    //+ "<br> WHEELS: " + JSON.stringify(car.wheels); 
 
-    //document.getElementsByTagName('p')[1].innerHTML=  all[0].brand;  
-
-  
-   
-   /*"WHEELS:<br> Rueda 1, marca:" + car.wheels[0].brand + ", diámetro:" + car.wheels[0].diameter*/
-   
+    
 }
-
 
 
 

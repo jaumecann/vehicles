@@ -4,8 +4,14 @@ function createCar() {
     var b = document.getElementsByName('color')[0].value;
     var c = document.getElementsByName('brand')[0].value;
     var car = new Car(a, b, c);
-    document.getElementsByTagName('p')[0].innerHTML = "CAR:<br> PLATE: " + car.plate
-        + "<br> COLOR: " + car.color + "<br> BRAND: " + car.brand;
+    var regExp = /(?=[A-Za-z]{3}\d{4})/.test(a);
+    if (!regExp) {
+        document.getElementsByTagName('p')[0].innerHTML = "La matrícula debe constar de 3 letras seguidas por 4 números";
+    }
+    else {
+        document.getElementsByTagName('p')[0].innerHTML = "CAR:<br> PLATE: " + car.plate
+            + "<br> COLOR: " + car.color + "<br> BRAND: " + car.brand;
+    }
 }
 function createWheel() {
     var texto = document.getElementsByTagName('p')[1];

@@ -1,5 +1,7 @@
 
 
+
+
 function createCar(){
 
 
@@ -9,8 +11,16 @@ function createCar(){
     
     let car=new Car(a, b, c);
 
-    document.getElementsByTagName('p')[0].innerHTML="CAR:<br> PLATE: " + car.plate
-    + "<br> COLOR: " +car.color + "<br> BRAND: " + car.brand; 
+    let regExp = /(?=[A-Za-z]{3}\d{4})/.test(a);
+    
+    if (!regExp) {
+        document.getElementsByTagName('p')[0].innerHTML= "La matrícula debe constar de 3 letras seguidas por 4 números"
+    } else {
+        document.getElementsByTagName('p')[0].innerHTML="CAR:<br> PLATE: " + car.plate
+        + "<br> COLOR: " +car.color + "<br> BRAND: " + car.brand; 
+    }
+
+ 
    
 }
 

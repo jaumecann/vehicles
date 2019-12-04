@@ -1,5 +1,5 @@
 class Car{
-    
+   
     plate:string;
     color:string;
     brand:string;

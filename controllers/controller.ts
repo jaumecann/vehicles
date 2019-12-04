@@ -1,9 +1,11 @@
 
 
-
-
 function createCar(){
-
+    
+    var texto = document.getElementsByTagName('p')[1];
+    while (texto.firstChild) {
+        texto.removeChild(texto.firstChild);
+      }
 
     let a = document.getElementsByName('plate')[0].value;
     let b = document.getElementsByName('color')[0].value;
@@ -20,10 +22,38 @@ function createCar(){
         + "<br> COLOR: " +car.color + "<br> BRAND: " + car.brand; 
     }
 
- 
+    // add wheels
+
+    let w1 = document.getElementsByName('rueda1')[0].value; 
+    let w2 = document.getElementsByName('rueda2')[0].value; 
+    let w3 = document.getElementsByName('rueda3')[0].value; 
+    let w4 = document.getElementsByName('rueda4')[0].value; 
+    
+    let d1 = document.getElementsByName('diam1')[0].value; 
+    let d2 = document.getElementsByName('diam2')[0].value; 
+    let d3 = document.getElementsByName('diam3')[0].value; 
+    let d4 = document.getElementsByName('diam4')[0].value;
+
+
+    car.addWheel(new Wheel(d1,w1));
+    car.addWheel(new Wheel(d2,w2));
+    car.addWheel(new Wheel(d3,w3));
+    car.addWheel(new Wheel(d4,w4));
+
+    //getter
+    var allWheels = car.four_wheels;
+    
+      for (let i=0; i<allWheels.length; i++){
+        if (allWheels[i].diameter && allWheels[i].diameter < 0.4 || allWheels[i].diameter > 2){
+                texto.innerHTML += `<span style="color:red;">El diametro de la rueda Rueda ${i+1} debe ser superior a 0.4 e inferior a 2 --> </span>`
+            
+           
+        }
+        texto.innerHTML += `Rueda ${i+1}: diametro (${allWheels[i].diameter}), marca (${allWheels[i].brand})<br>`
+    }
    
 }
-
+/*
 function createWheel(){
 
     var texto = document.getElementsByTagName('p')[1];
@@ -66,5 +96,5 @@ function createWheel(){
 }
 
 
-
+*/
 

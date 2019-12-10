@@ -29,7 +29,7 @@ function createCar(){
     }
 
     // add wheels
-
+/*
     let w1 = document.getElementsByName('rueda1')[0].value; 
     let w2 = document.getElementsByName('rueda2')[0].value; 
     let w3 = document.getElementsByName('rueda3')[0].value; 
@@ -40,17 +40,26 @@ function createCar(){
     let d3 = document.getElementsByName('diam3')[0].value; 
     let d4 = document.getElementsByName('diam4')[0].value;
 
+*/
+    let wheel;
+    let diam;
 
-    car.addWheel(new Wheel(d1,w1));
-    car.addWheel(new Wheel(d2,w2));
-    car.addWheel(new Wheel(d3,w3));
-    car.addWheel(new Wheel(d4,w4));
+
+
+    car.addWheel(new Wheel);
+    car.addWheel(new Wheel);
+    car.addWheel(new Wheel);
+    car.addWheel(new Wheel);
 
     //getter de car
 
     var allWheels = car.four_wheels;
     
       for (let i=0; i<allWheels.length; i++){
+        
+        allWheels[i].diameter = document.getElementsByName(`diam${i+1}`)[0].value;
+        allWheels[i].brand = document.getElementsByName(`rueda${i+1}`)[0].value;
+
 
         if (allWheels[i].diameter.toString().length == 0 && allWheels[i].brand.length  == 0){
         p2.innerHTML += "";    

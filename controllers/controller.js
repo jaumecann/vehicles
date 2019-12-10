@@ -21,21 +21,29 @@ function createCar() {
             + "<br> COLOR: " + car.color + "<br> BRAND: " + car.brand;
     }
     // add wheels
-    var w1 = document.getElementsByName('rueda1')[0].value;
-    var w2 = document.getElementsByName('rueda2')[0].value;
-    var w3 = document.getElementsByName('rueda3')[0].value;
-    var w4 = document.getElementsByName('rueda4')[0].value;
-    var d1 = document.getElementsByName('diam1')[0].value;
-    var d2 = document.getElementsByName('diam2')[0].value;
-    var d3 = document.getElementsByName('diam3')[0].value;
-    var d4 = document.getElementsByName('diam4')[0].value;
-    car.addWheel(new Wheel(d1, w1));
-    car.addWheel(new Wheel(d2, w2));
-    car.addWheel(new Wheel(d3, w3));
-    car.addWheel(new Wheel(d4, w4));
+    /*
+        let w1 = document.getElementsByName('rueda1')[0].value;
+        let w2 = document.getElementsByName('rueda2')[0].value;
+        let w3 = document.getElementsByName('rueda3')[0].value;
+        let w4 = document.getElementsByName('rueda4')[0].value;
+        
+        let d1 = document.getElementsByName('diam1')[0].value;
+        let d2 = document.getElementsByName('diam2')[0].value;
+        let d3 = document.getElementsByName('diam3')[0].value;
+        let d4 = document.getElementsByName('diam4')[0].value;
+    
+    */
+    var wheel;
+    var diam;
+    car.addWheel(new Wheel);
+    car.addWheel(new Wheel);
+    car.addWheel(new Wheel);
+    car.addWheel(new Wheel);
     //getter de car
     var allWheels = car.four_wheels;
     for (var i = 0; i < allWheels.length; i++) {
+        allWheels[i].diameter = document.getElementsByName("diam" + (i + 1))[0].value;
+        allWheels[i].brand = document.getElementsByName("rueda" + (i + 1))[0].value;
         if (allWheels[i].diameter.toString().length == 0 && allWheels[i].brand.length == 0) {
             p2.innerHTML += "";
         }

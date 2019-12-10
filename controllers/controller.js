@@ -1,14 +1,11 @@
 "use strict";
+var car;
 function createCar() {
     var p1 = document.getElementsByTagName('p')[0];
-    var p2 = document.getElementsByTagName('p')[1];
-    while (p2.firstChild) {
-        p2.removeChild(p2.firstChild);
-    }
     var a = document.getElementsByName('plate')[0].value;
     var b = document.getElementsByName('color')[0].value;
     var c = document.getElementsByName('brand')[0].value;
-    var car = new Car(a, b, c);
+    car = new Car(a, b, c);
     var regExp = /(?=[A-Za-z]{3}\d{4})/.test(a);
     if (a.length == 0 || b.length == 0 || c.length == 0) {
         p1.innerHTML = "Por favor, completa toda la información";
@@ -20,21 +17,14 @@ function createCar() {
         p1.innerHTML = "CAR:<br> PLATE: " + car.plate
             + "<br> COLOR: " + car.color + "<br> BRAND: " + car.brand;
     }
+}
+;
+function addWheels() {
+    var p2 = document.getElementsByTagName('p')[1];
+    while (p2.firstChild) {
+        p2.removeChild(p2.firstChild);
+    }
     // add wheels
-    /*
-        let w1 = document.getElementsByName('rueda1')[0].value;
-        let w2 = document.getElementsByName('rueda2')[0].value;
-        let w3 = document.getElementsByName('rueda3')[0].value;
-        let w4 = document.getElementsByName('rueda4')[0].value;
-        
-        let d1 = document.getElementsByName('diam1')[0].value;
-        let d2 = document.getElementsByName('diam2')[0].value;
-        let d3 = document.getElementsByName('diam3')[0].value;
-        let d4 = document.getElementsByName('diam4')[0].value;
-    
-    */
-    var wheel;
-    var diam;
     car.addWheel(new Wheel);
     car.addWheel(new Wheel);
     car.addWheel(new Wheel);
@@ -55,4 +45,3 @@ function createCar() {
         }
     }
 }
-;
